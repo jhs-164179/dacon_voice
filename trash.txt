@@ -1,0 +1,8 @@
+# 함수형 모델 테스트1
+input_shape = (None, None)
+inputs = layers.Input(shape = input_shape)
+lstm_layer = layers.LSTM(128)(inputs)
+dense_layer = layers.Dense(64, activation='relu')(lstm_layer)
+outputs = layers.Dense(num_classes, activation='softmax')(dense_layer)
+
+model = keras.models.Model(inputs = inputs, outputs = outputs)
